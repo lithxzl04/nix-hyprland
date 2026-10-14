@@ -1,0 +1,165 @@
+/* ~/.config/swaync/style.css */
+
+/* Palette sampled from the wallpaper */
+@define-color bg         #141414;
+@define-color surface    #232323;
+@define-color border     #393a4b;
+@define-color border-dim #2f3041;
+@define-color accent     #b2d7ff;
+@define-color muted      #4f6473;
+@define-color critical   #e78284;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    color: @accent;
+}
+
+/* Popup notifications */
+.floating-notifications.background {
+    background: transparent;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: transparent;
+}
+
+.notification-background {
+    background: transparent;
+}
+
+.notification {
+    background: @surface;
+    border: 1px solid @border;
+    border-radius: 10px;
+    margin: 6px 10px;
+    padding: 0;
+    box-shadow: none;
+}
+
+.notification.critical {
+    border-color: @critical;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 8px;
+}
+
+.summary {
+    color: @accent;
+    font-weight: bold;
+}
+
+.time,
+.body {
+    color: @accent;
+    opacity: 0.75;
+}
+
+.close-button {
+    background: @border-dim;
+    color: @accent;
+    border-radius: 6px;
+    min-width: 20px;
+    min-height: 20px;
+    margin: 6px;
+    padding: 0;
+}
+
+.close-button:hover {
+    background: @accent;
+    color: @bg;
+}
+
+/* Notification actions */
+.notification-action {
+    background: @border-dim;
+    border: none;
+    border-radius: 6px;
+    margin: 4px;
+}
+
+.notification-action:hover {
+    background: @accent;
+    color: @bg;
+}
+
+/* Control center panel */
+.control-center {
+    background: @bg;
+    border: 2px solid @border;
+    border-radius: 12px;
+    margin: 8px;
+}
+
+.control-center .notification-row .notification-background .notification {
+    background: @surface;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    color: @muted;
+}
+
+/* Title and clear button */
+.widget-title {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+.widget-title > button {
+    background: @surface;
+    border: 1px solid @border;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+.widget-title > button:hover {
+    background: @accent;
+    color: @bg;
+}
+
+/* Do not disturb toggle */
+.widget-dnd {
+    margin: 10px;
+}
+
+.widget-dnd > switch {
+    background: @surface;
+    border: 1px solid @border;
+    border-radius: 12px;
+}
+
+.widget-dnd > switch:checked {
+    background: @accent;
+}
+
+.widget-dnd > switch slider {
+    background: @muted;
+    border-radius: 12px;
+}
+
+.widget-dnd > switch:checked slider {
+    background: @bg;
+}
+
+/* Media player widget (if enabled in config.json) */
+.widget-mpris {
+    margin: 10px;
+}
+
+.widget-mpris-player {
+    background: @surface;
+    border: 1px solid @border;
+    border-radius: 10px;
+    padding: 8px;
+}

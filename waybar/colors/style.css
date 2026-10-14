@@ -1,0 +1,129 @@
+/* ~/.config/waybar/style.css */
+
+/* Palette sampled from the wallpaper */
+@define-color bg         #141414;
+@define-color surface    #232323;
+@define-color border     #393a4b;
+@define-color border-dim #2f3041;
+@define-color accent     #b2d7ff;
+@define-color muted      #4f6473;
+
+/* Status colors (not in the wallpaper, softened to fit) */
+@define-color warning    #e5c890;
+@define-color critical   #e78284;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @accent;
+}
+
+tooltip {
+    background: @bg;
+    border: 1px solid @border;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @accent;
+}
+
+/* Every module is a small "island" */
+#clock,
+#tray,
+#workspaces,
+#custom-media,
+#custom-swaync,
+#network,
+#pulseaudio,
+#battery,
+#power-profiles-daemon,
+#custom-power {
+    background: @surface;
+    color: @accent;
+    border: 1px solid @border;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    background: transparent;
+    color: @muted;
+    border-radius: 6px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button:hover {
+    background: @border-dim;
+    color: @accent;
+}
+
+#workspaces button.active {
+    background: @accent;
+    color: @bg;
+}
+
+#workspaces button.urgent {
+    background: @critical;
+    color: @bg;
+}
+
+/* Media */
+#custom-media {
+    padding: 0 14px;
+}
+
+/* Notifications */
+#custom-swaync:hover,
+#custom-power:hover,
+#pulseaudio:hover,
+#network:hover {
+    background: @border-dim;
+}
+
+/* Audio */
+#pulseaudio.muted {
+    color: @muted;
+}
+
+/* Battery */
+#battery.charging,
+#battery.plugged {
+    color: @accent;
+}
+
+#battery.warning:not(.charging) {
+    color: @warning;
+}
+
+#battery.critical:not(.charging) {
+    color: @critical;
+}
+
+/* Power profile */
+#power-profiles-daemon.performance {
+    color: @critical;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @muted;
+}
+
+/* Power button */
+#custom-power {
+    color: @critical;
+}

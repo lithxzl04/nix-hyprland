@@ -1,0 +1,91 @@
+/* ~/.config/rofi/config.rasi */
+
+configuration {
+    modes: "drun";
+    show-icons: true;
+    font: "JetBrainsMono Nerd Font 11";
+    drun-display-format: "{name}";
+    display-drun: "❯";
+}
+
+* {
+    /* Palette sampled from the wallpaper */
+    bg:         #141414;
+    surface:    #232323;
+    border-col: #393a4b;
+    border-dim: #2f3041;
+    accent:     #b2d7ff;
+    muted:      #4f6473;
+
+    background-color: transparent;
+    text-color:       @accent;
+}
+
+window {
+    width:            520px;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @border-col;
+    border-radius:    10px;
+}
+
+mainbox {
+    padding:  12px;
+    spacing:  10px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @surface;
+    border:           1px;
+    border-color:     @border-dim;
+    border-radius:    8px;
+    padding:          8px 12px;
+    spacing:          8px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color: @accent;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @muted;
+}
+
+listview {
+    lines:        8;
+    columns:      1;
+    fixed-height: true;
+    scrollbar:    false;
+    spacing:      4px;
+}
+
+element {
+    padding:       8px 10px;
+    spacing:       10px;
+    border-radius: 8px;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color:       @accent;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color:       @bg;
+}
+
+element-icon {
+    size:             22px;
+    background-color: inherit;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
